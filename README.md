@@ -12,3 +12,4 @@ bundle install
 ```
 ruby main.rb
 ```
+Para sair `ctrl+C`
