@@ -53,7 +53,7 @@ class Fire
 
 	def compute_new_intensity(pixel_index)
 		decay = rand(1..3)
-		fire_intensity = @pixels_array[pixel_index] - decay 
+		fire_intensity = @pixels_array[pixel_index - decay] - decay 
 		fire_intensity >= 0 ? fire_intensity : 0
 	end	
 
