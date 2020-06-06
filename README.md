@@ -3,7 +3,8 @@
 My implementarion to Doom fire Algorithm, based on 
 [Filipe Deschamps tutorial](https://www.youtube.com/watch?v=fxm8cadCqbs).
 
-![Print screen image.](media/screen.png)
+<img src="media/screen.png" alt="drawing" width="250" height="250" />
+
 
 ## Install
 
