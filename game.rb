@@ -2,17 +2,20 @@ require 'gosu'
 require_relative 'engine'
 require_relative 'color'
 
-WIDTH = 50
-HEIGHT = 50
-TILE = 10
+WIDTH = 400
+HEIGHT = 280
+TILE = 5
+
+FIRE_WIDTH = WIDTH / TILE
+FIRE_HEIGHT = HEIGHT / TILE
 
 class DoomFire < Gosu::Window
   def initialize
-    super (WIDTH * TILE), (HEIGHT * TILE)
+    super WIDTH, HEIGHT, false, 1000/15
     self.caption = "Doom Fire"
 
     @palete = Color::PALETE
-    @engine = FireEngine.new(WIDTH, WIDTH)
+    @engine = FireEngine.new(FIRE_WIDTH, FIRE_HEIGHT)
     @engine.start
   end
   
@@ -21,12 +24,9 @@ class DoomFire < Gosu::Window
   end
   
   def draw
-    fire_pixels = @engine.fire_pixels
-    HEIGHT.times do |row|
-			WIDTH.times do |col|
-				pixel_index = col + (WIDTH * row)
-				fire_intensity = fire_pixels[pixel_index]
-				color = @palete[fire_intensity]
+    FIRE_HEIGHT.times do |row|
+      FIRE_WIDTH.times do |col|
+        color = get_color row, col
         draw_rect(
           (col * TILE), (row * TILE), 
           TILE, TILE, 
@@ -34,6 +34,14 @@ class DoomFire < Gosu::Window
         )
 			end
     end
+  end
+  
+  private 
+  
+  def get_color row, col
+    pixel_index = col + (FIRE_WIDTH * row)
+    fire_intensity = @engine.fire_pixels[pixel_index]
+    @palete[fire_intensity]
   end
 end
 
