@@ -1,15 +1,19 @@
 # Doom Fire
 
-Implementação em ruby da animação do fogo do jogo Doom.
-Baseado no [tutorial](https://www.youtube.com/watch?v=fxm8cadCqbs) do Filipe Deschamps.
+My implementarion to Doom fire Algorithm, based on 
+[Filipe Deschamps tutorial](https://www.youtube.com/watch?v=fxm8cadCqbs).
 
-## Instalação do ambiente
+## Install
+
+First, you may install all dependecies of [gosu](https://github.com/gosu/gosu) library. You can learn more about this [here](https://github.com/gosu/gosu/wiki).
+
 ```
 bundle install
 ```
 
-## Para executar
+## Running
 ```
 ruby main.rb
 ```
-Para sair `ctrl+C`
+
+To leaft the program `ctrl+C`

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rainbow'
+gem 'gosu'
 gem 'pry'
 gem 'pry-rails'
