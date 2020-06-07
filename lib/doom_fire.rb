@@ -4,11 +4,11 @@ require 'gosu'
 require_relative 'fire_engine'
 require_relative 'color'
 
-WIDTH = 500
-HEIGHT = 500
-PIXEL = 4
+WIDTH  = 400
+HEIGHT = 400
+PIXEL  = 5
 
-FIRE_WIDTH = WIDTH / PIXEL
+FIRE_WIDTH  = WIDTH / PIXEL
 FIRE_HEIGHT = HEIGHT / PIXEL
 
 class DoomFire < Gosu::Window

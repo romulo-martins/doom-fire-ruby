@@ -74,8 +74,11 @@ class FireEngine
 
   private
 
+  def decay
+    rand(0..@decay_intensity)
+  end
+
   def compute_new_intensity(pixel_index)
-    decay = rand(0..@decay_intensity)
     fire_intensity = @fire_pixels[pixel_index] - decay
     fire_intensity >= 0 ? fire_intensity : 0
   end
@@ -85,7 +88,6 @@ class FireEngine
     return if below_pixel_index >= @total_pixels
 
     new_intensity = compute_new_intensity(below_pixel_index)
-    decay = rand(1..3)
     case @move
     when LEFT then
       new_pixel_index = pixel_index - decay
