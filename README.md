@@ -1,7 +1,7 @@
 # Doom Fire
 
-My implementarion to Doom fire Algorithm, based on 
-[Filipe Deschamps tutorial](https://www.youtube.com/watch?v=fxm8cadCqbs).
+My implementarion of the Doom fire Algorithm, based on 
+[Filipe Deschamps tutorial](https://www.youtube.com/watch?v=fxm8cadCqbs). The original was written with vanilla javascript, so i tried to write with ruby programming language using the gosu library and adding movement and intensity features.
 
 <img src="media/screen.png" alt="drawing" width="250" height="250" />
 
