@@ -19,4 +19,4 @@ bundle install
 ruby main.rb
 ```
 
-To leaft the program `ctrl+C`
+To leave the program `ctrl+C`
