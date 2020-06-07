@@ -6,7 +6,7 @@ require_relative 'color'
 
 WIDTH = 500
 HEIGHT = 500
-PIXEL = 5
+PIXEL = 4
 
 FIRE_WIDTH = WIDTH / PIXEL
 FIRE_HEIGHT = HEIGHT / PIXEL
@@ -39,9 +39,12 @@ class DoomFire < Gosu::Window
 
   def button_down(id)
     case id
-      when Gosu::KbUp     then @engine.increase_decay
-      when Gosu::KbDown   then @engine.decrease_decay
-      when Gosu::KbEscape then close
+    when Gosu::KbUp     then @engine.increase_decay
+    when Gosu::KbDown   then @engine.decrease_decay
+    when Gosu::KbLeft   then @engine.move_left
+    when Gosu::KbRight  then @engine.move_right
+    when Gosu::KbSpace  then @engine.move_center
+    when Gosu::KbEscape then close
     end
   end
 end

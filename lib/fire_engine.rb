@@ -27,7 +27,7 @@ class FireEngine
   end
 
   def create_data_structure
-    @total_pixels.times { @fire_pixels << 0 }
+    (@total_pixels - 1).times { @fire_pixels << 0 }
   end
 
   def create_source
@@ -46,14 +46,25 @@ class FireEngine
     end
   end
 
-  def move_center; @move = CENTER; end
-  def move_left; @move = LEFT; end
-  def move_right; @move = RIGHT; end
+  def move_center
+    @move = CENTER
+  end
 
-  def increase_decay 
+  def move_left
+    @move = LEFT
+  end
+
+  def move_right
+    @move = RIGHT
+  end
+
+  def increase_decay
     @decay_intensity -= 1 if @decay_intensity > 0
   end
-  def decrease_decay; @decay_intensity += 1; end
+
+  def decrease_decay
+    @decay_intensity += 1
+  end
 
   def get_color(row, col)
     pixel_index = col + (FIRE_WIDTH * row)
@@ -72,8 +83,16 @@ class FireEngine
   def update_intesity_pixel(pixel_index)
     below_pixel_index = pixel_index + @width
     return if below_pixel_index >= @total_pixels
-    
+
     new_intensity = compute_new_intensity(below_pixel_index)
+    decay = rand(1..3)
+    case @move
+    when LEFT then
+      new_pixel_index = pixel_index - decay
+      pixel_index = new_pixel_index > 0 ? new_pixel_index : pixel_index
+    when RIGHT
+      pixel_index += decay
+    end
     @fire_pixels[pixel_index] = new_intensity
   end
 end
