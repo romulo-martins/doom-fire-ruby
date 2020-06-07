@@ -1,13 +1,13 @@
 require 'gosu'
-require_relative 'engine'
+require_relative 'fire_engine'
 require_relative 'color'
 
 WIDTH = 400
 HEIGHT = 280
-TILE = 5
+PIXEL = 5
 
-FIRE_WIDTH = WIDTH / TILE
-FIRE_HEIGHT = HEIGHT / TILE
+FIRE_WIDTH = WIDTH / PIXEL
+FIRE_HEIGHT = HEIGHT / PIXEL
 
 class DoomFire < Gosu::Window
   def initialize
@@ -28,8 +28,8 @@ class DoomFire < Gosu::Window
       FIRE_WIDTH.times do |col|
         color = get_color row, col
         draw_rect(
-          (col * TILE), (row * TILE), 
-          TILE, TILE, 
+          (col * PIXEL), (row * PIXEL), 
+          PIXEL, PIXEL, 
           Gosu::Color.rgb(color[:r], color[:g], color[:b])
         )
 			end
